@@ -62,7 +62,7 @@ export const resumeData = {
             degree: "Master of Science in Computer Science",
             period: "2025 – 2026",
             gpa: "3.74/4.0",
-            courses: ["Analysis of Algorithms", "Web Technologies", "Database Systems", "Applied NLP", "Foundations of AI"]
+            courses: ["Analysis of Algorithms", "Machine Learning for Data Science", "Applied NLP", "Foundations of AI", "Operating Systems", "Distributed Systems", "Information Retrieval and Web Search Engines"]
         },
         {
             institution: "JSS Academy of Technical Education",
