@@ -1,5 +1,5 @@
 import Section from '../components/Section';
-import { resumeData } from '../data/resume';
+
 
 const About = () => {
     return (
