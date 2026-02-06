@@ -5,79 +5,112 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   return (
     <Section id="experience" title="Work Experience">
-      <div className="experience-list">
+      <div className="timeline">
         {resumeData.experience.map((exp, index) => (
-          <div key={index} className="experience-card">
+          <div key={index} className="timeline-item">
+            <div className="timeline-marker"></div>
+            <div className="timeline-content">
 
-            <div className="card-header">
-              <div className="header-left">
-                <h3 className="role">{exp.role}</h3>
-                <h4 className="company">{exp.company}</h4>
-              </div>
-              <div className="header-right">
-                <div className="period-badge">
-                  <Calendar size={14} /> {exp.period}
+              <div className="exp-header">
+                <div className="role-company">
+                  <h3 className="role">{exp.role}</h3>
+                  <a href="#" className="company">{exp.company}</a>
                 </div>
-                <div className="location">
-                  <MapPin size={14} /> {exp.location}
+                <div className="meta-info">
+                  <span className="badge-period">
+                    <Calendar size={14} /> {exp.period}
+                  </span>
+                  <span className="badge-location">
+                    <MapPin size={14} /> {exp.location}
+                  </span>
                 </div>
               </div>
+
+              <p className="description">{exp.description}</p>
+
+              <ul className="achievements">
+                {exp.achievements.map((item, i) => {
+                  // Bold key terms if needed, handled via resumeData markdown or just plain text
+                  // Render markdown-like bolding simply by replacing **
+                  const parts = item.split(/(\*\*.*?\*\*)/g);
+                  return (
+                    <li key={i}>
+                      {parts.map((part, j) => {
+                        if (part.startsWith('**') && part.endsWith('**')) {
+                          return <strong key={j} className="text-highlight">{part.slice(2, -2)}</strong>;
+                        }
+                        return part;
+                      })}
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <div className="tech-stack">
+                {exp.techStack.map((tech) => (
+                  <span key={tech} className="tech-badge">{tech}</span>
+                ))}
+              </div>
+
             </div>
-
-            <p className="description">{exp.description}</p>
-
-            <ul className="achievements">
-              {exp.achievements.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-
-            <div className="tech-stack">
-              {exp.techStack.map((tech) => (
-                <span key={tech} className="tech-badge">{tech}</span>
-              ))}
-            </div>
-
           </div>
         ))}
       </div>
 
       <style jsx>{`
-        .experience-list {
-          display: flex;
-          flex-direction: column;
-          gap: 2.5rem;
-        }
-
-        .experience-card {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid var(--border);
-          border-radius: 16px;
-          padding: 2.5rem;
-          transition: all 0.3s ease;
+        .timeline {
           position: relative;
-          overflow: hidden;
+          max-width: 900px;
+          margin: 0 auto;
         }
 
-        .experience-card:hover {
-          background: rgba(255, 255, 255, 0.04);
-          border-color: var(--text-secondary);
-          transform: translateY(-2px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .experience-card::before {
+        .timeline::before {
           content: '';
           position: absolute;
-          top: 0;
           left: 0;
-          width: 4px;
-          height: 100%;
-          background: var(--accent);
-          opacity: 0.7;
+          top: 10px;
+          bottom: 0;
+          width: 2px;
+          background: var(--border);
         }
 
-        .card-header {
+        .timeline-item {
+          position: relative;
+          padding-left: 2.5rem;
+          margin-bottom: 4rem;
+        }
+
+        .timeline-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .timeline-marker {
+          position: absolute;
+          left: -5px;
+          top: 6px;
+          width: 12px;
+          height: 12px;
+          background: var(--accent);
+          border-radius: 50%;
+          border: 2px solid var(--bg-primary);
+          box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .timeline-content {
+          background: var(--bg-secondary);
+          padding: 2rem;
+          border-radius: 12px;
+          border: 1px solid var(--border);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .timeline-content:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          border-color: var(--text-secondary);
+        }
+
+        .exp-header {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
@@ -87,10 +120,9 @@ const Experience = () => {
         }
 
         .role {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           color: var(--text-primary);
           margin-bottom: 0.25rem;
-          font-weight: 700;
         }
 
         .company {
@@ -99,45 +131,36 @@ const Experience = () => {
           font-weight: 500;
         }
 
-        .header-right {
+        .meta-info {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
           gap: 0.5rem;
         }
 
-        .period-badge {
+        .badge-period, .badge-location {
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
-          background: rgba(59, 130, 246, 0.1);
-          color: var(--accent);
-          padding: 0.4rem 0.8rem;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          white-space: nowrap;
+          gap: 0.4rem;
+          font-size: 0.85rem;
+          color: var(--text-tertiary);
+          font-family: var(--font-mono, monospace);
         }
 
-        .location {
-          display: flex;
-          align-items: center;
-          gap: 0.4rem;
-          color: var(--text-tertiary);
-          font-size: 0.9rem;
+        .badge-period {
+          color: var(--text-primary);
+          font-weight: 600;
         }
 
         .description {
           color: var(--text-secondary);
           margin-bottom: 1.5rem;
-          font-size: 1.05rem;
-          line-height: 1.7;
-          max-width: 90%;
+          font-style: italic;
         }
 
         .achievements {
           list-style: none;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
 
         .achievements li {
@@ -145,58 +168,60 @@ const Experience = () => {
           padding-left: 1.5rem;
           margin-bottom: 0.75rem;
           color: var(--text-secondary);
-          font-size: 1rem;
           line-height: 1.6;
         }
 
         .achievements li::before {
-          content: '•';
+          content: '▹';
           position: absolute;
           left: 0;
           color: var(--accent);
-          font-size: 1.5rem;
-          line-height: 1;
+          font-size: 1.2rem;
+          line-height: 1.2;
+        }
+
+        .text-highlight {
+          color: var(--text-primary);
+          font-weight: 600;
         }
 
         .tech-stack {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.75rem;
+          gap: 0.5rem;
           padding-top: 1rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
+          border-top: 1px solid var(--border);
         }
 
         .tech-badge {
-          font-size: 0.85rem;
-          padding: 0.35rem 0.85rem;
+          font-size: 0.75rem;
           background: rgba(255, 255, 255, 0.05);
           color: var(--text-secondary);
-          border-radius: 6px;
+          padding: 0.25rem 0.75rem;
+          border-radius: 99px;
           border: 1px solid transparent;
-          transition: all 0.2s;
           font-family: var(--font-mono, monospace);
         }
 
-        .experience-card:hover .tech-badge {
-          border-color: rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.08);
-          color: var(--text-primary);
-        }
-
         @media (max-width: 768px) {
-          .card-header {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          .header-right {
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-            justify-content: space-between;
-          }
-          .experience-card {
-            padding: 1.5rem;
-          }
+           .exp-header {
+             flex-direction: column;
+           }
+           .meta-info {
+             flex-direction: row;
+             align-items: center;
+             width: 100%;
+             justify-content: flex-start;
+           }
+            .timeline::before {
+             left: 10px;
+           }
+            .timeline-item {
+              padding-left: 2rem;
+            }
+            .timeline-marker {
+              left: 5px;
+            }
         }
       `}</style>
     </Section>

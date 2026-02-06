@@ -1,56 +1,96 @@
+import { useState } from 'react';
 import Section from '../components/Section';
 import { resumeData } from '../data/resume';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Projects = () => {
-    return (
-        <Section id="projects" title="Featured Projects">
-            <div className="projects-grid">
-                {resumeData.projects.map((project, index) => (
-                    <div key={index} className="project-card">
-                        <div className="card-header">
-                            <h3 className="project-title">{project.title}</h3>
-                            <div className="card-actions">
-                                {/* Placeholder links, ideally would come from data */}
-                                <a href="#" className="card-link" aria-label="GitHub Repo">
-                                    <Github size={18} />
-                                </a>
-                                <a href="#" className="card-link" aria-label="Live Demo">
-                                    <ExternalLink size={18} />
-                                </a>
-                            </div>
-                        </div>
-                        <p className="project-description">{project.description}</p>
-                        <div className="project-tech">
-                            {project.techStack.map((tech) => (
-                                <span key={tech} className="tech">{tech}</span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+  const [showAll, setShowAll] = useState(false);
+  const featuredLimit = 3;
+  const displayedProjects = showAll ? resumeData.projects : resumeData.projects.slice(0, featuredLimit);
+
+  return (
+    <Section id="projects" title="Featured Projects">
+      <div className="projects-grid">
+        {displayedProjects.map((project, index) => (
+          <article key={index} className="project-card">
+
+            <div className="card-header">
+              <h3 className="project-title">{project.title}</h3>
+              <div className="card-actions">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo">
+                  <Github size={20} />
+                </a>
+              </div>
             </div>
 
-            <style jsx>{`
+            <div className="card-body">
+              <p className="description">{project.description}</p>
+
+              {project.caseStudy && (
+                <div className="case-study">
+                  <div className="study-item">
+                    <span className="label">Problem:</span> {project.caseStudy.problem}
+                  </div>
+                  <div className="study-item">
+                    <span className="label">Solution:</span> {project.caseStudy.solution}
+                  </div>
+                  <div className="study-item highlight">
+                    <span className="label">Impact:</span> {project.caseStudy.impact}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="card-footer">
+              <div className="tech-stack">
+                {project.techStack.map((tech) => (
+                  <span key={tech} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+      {resumeData.projects.length > featuredLimit && (
+        <div className="show-more-container">
+          <button
+            className="btn-show-more"
+            onClick={() => setShowAll(!showAll)}
+            aria-label={showAll ? "Show fewer projects" : "Show more projects"}
+          >
+            {showAll ? (
+              <>Show Less <ChevronUp size={18} /></>
+            ) : (
+              <>Show More Projects <ChevronDown size={18} /></>
+            )}
+          </button>
+        </div>
+      )}
+
+      <style jsx>{`
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           gap: 2rem;
+          margin-bottom: 3rem;
         }
 
         .project-card {
           background: var(--bg-secondary);
-          padding: 2rem;
-          border-radius: 12px;
           border: 1px solid var(--border);
-          transition: all 0.3s ease;
+          border-radius: 12px;
+          padding: 2rem;
           display: flex;
           flex-direction: column;
+          height: 100%;
+          transition: border-color 0.2s ease, transform 0.2s ease;
         }
 
         .project-card:hover {
-          transform: translateY(-8px);
           border-color: var(--accent);
-          box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+          transform: translateY(-4px);
         }
 
         .card-header {
@@ -63,44 +103,107 @@ const Projects = () => {
         .project-title {
           font-size: 1.25rem;
           color: var(--text-primary);
+          line-height: 1.3;
         }
 
-        .card-actions {
-          display: flex;
-          gap: 1rem;
-        }
-
-        .card-link {
+        .card-actions a {
           color: var(--text-secondary);
           transition: color 0.2s;
         }
 
-        .card-link:hover {
+        .card-actions a:hover {
           color: var(--accent);
         }
 
-        .project-description {
+        .description {
           color: var(--text-secondary);
-          font-size: 0.95rem;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
+
+        .case-study {
+          background: rgba(0, 0, 0, 0.2);
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .study-item {
+          margin-bottom: 0.5rem;
+          color: var(--text-secondary);
+        }
+
+        .study-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .study-item .label {
+          color: var(--text-primary);
+          font-weight: 600;
+          margin-right: 0.5rem;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+          letter-spacing: 0.05em;
+        }
+
+        .highlight {
+          color: var(--text-primary);
+          border-left: 2px solid var(--accent);
+          padding-left: 0.75rem;
+        }
+
+        .card-body {
           flex-grow: 1;
         }
 
-        .project-tech {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.75rem;
+        .card-footer {
           margin-top: auto;
+          border-top: 1px solid var(--border);
+          padding-top: 1rem;
         }
 
-        .tech {
-          font-size: 0.8rem;
+        .tech-stack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .tech-tag {
+          font-size: 0.75rem;
           color: var(--text-tertiary);
           font-family: var(--font-mono, monospace);
         }
+
+        .show-more-container {
+          display: flex;
+          justify-content: center;
+        }
+
+        .btn-show-more {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          background: var(--bg-tertiary);
+          color: var(--text-primary);
+          border-radius: 8px;
+          font-weight: 500;
+          transition: background 0.2s;
+        }
+
+        .btn-show-more:hover {
+          background: var(--border);
+        }
+
+        @media (max-width: 768px) {
+          .projects-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
-        </Section>
-    );
+    </Section>
+  );
 };
 
 export default Projects;
