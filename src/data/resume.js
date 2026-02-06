@@ -3,51 +3,54 @@ export const resumeData = {
         name: "Adithya Sudhindra",
         role: "Software Engineer | AI/ML Specialist",
         summary: "Software Engineer with expertise in Generative AI, Full-Stack Development, and Cloud-Native Distributed Systems. Proven track record of optimizing ML pipelines at Mercedes-Benz and building scalable architectures. Passionate about solving complex problems through AI innovation and robust engineering.",
-        email: "adithyasudhindra@gmail.com", // Assuming standard format, placeholder if not found
-        location: "Los Angeles, CA", // Inferred from USC
+        email: "adithyasudhindra@gmail.com",
+        location: "Los Angeles, CA",
         socials: {
             github: "https://github.com/Adithya2441",
-            linkedin: "https://linkedin.com/in/adithyasudhindra", // Placeholder/Inferred
+            linkedin: "https://linkedin.com/in/adithyasudhindra",
         }
     },
     experience: [
         {
-            company: "Mercedes-Benz R&D",
-            role: "Consultant (Software Developer)",
+            company: "Mercedes-Benz Research and Development",
+            role: "Software Developer Consultant",
             period: "Jul 2023 – Dec 2024",
             location: "Bangalore, India",
-            description: "Led the integration of Generative AI (GPT-4o) into enterprise workflows, automating document generation and optimizing model delivery pipelines.",
+            description: "Contributed to a mission-critical Java enterprise application serving thousands of global users, focusing on AI integration and system modernization.",
             achievements: [
-                "Architected an automated document generation system using GPT-4o, reducing manual effort by 40%.",
-                "Optimized ML model delivery pipelines, achieving an 18% increase in operational efficiency.",
-                "Collaborated with cross-functional teams to deploy scalable microservices for AI-driven applications."
+                "Architected and deployed a Generation AI (GPT-4o) help desk system using RAG and Streamlit, increasing documentation engagement by 30% and automating query resolution.",
+                "Designed and implemented 15+ full-stack features using Java EE, EJB, JDBC, and Primefaces, delivering 20–30% ahead of Agile schedule.",
+                "Modernized a 17-year-old legacy codebase by refactoring core modules and introducing CI/CD pipelines with JUnit automation, ensuring 100% application integrity.",
+                "Optimized database query performance and API response times, significantly improving the user experience for high-traffic dashboards."
             ],
-            techStack: ["Python", "GPT-4o", "RAG", "Docker", "Microservices"]
+            techStack: ["Java", "Spring Boot", "GPT-4o", "RAG", "Docker", "Jenkins", "PostgreSQL"]
         },
         {
             company: "Saigeware Technologies",
             role: "AI and Data Science Intern",
             period: "Feb 2023 – Apr 2023",
             location: "Bangalore, India",
-            description: "Developed machine learning pipelines for healthcare data analysis, significantly improving classification accuracy.",
+            description: "Led the development of multimodal machine learning pipelines for healthcare diagnostics.",
             achievements: [
-                "Built a healthcare analytics pipeline using a Random Forest and Deep Learning ensemble.",
-                "Improved classification accuracy from 55% to 75% on complex medical datasets.",
-                "Processed and analyzed over 1.2 billion records to derive actionable insights."
+                "Built a custom ensemble ML pipeline (Random Forest + CNN) for medical imaging and audio data, boosting multiclass classification accuracy from 55% to 75%.",
+                "Engineered reliable ETL pipelines to process a 1.2 billion+ record US healthcare dataset, automating reporting workflows and cutting manual effort by 30%.",
+                "Developed VAE-based (Variational Autoencoder) feature extraction models to identify latent risk factors in clinical patient data.",
+                "Designed scalable analytics dashboards to visualize stroke-risk prediction models for early intervention strategies."
             ],
-            techStack: ["Python", "Random Forest", "Deep Learning", "Pandas"]
+            techStack: ["Python", "PyTorch", "TensorFlow", "Pandas", "Computer Vision", "ETL"]
         },
         {
             company: "BETSOL",
             role: "Software Engineer Trainee",
             period: "Jun 2022 – Jul 2022",
             location: "Bangalore, India",
-            description: "Worked on Zmanda’s enterprise backup platform, ensuring high availability and robust API documentation.",
+            description: "Focused on backend development and API architecture for Zmanda, an enterprise backup solution available in 45+ countries.",
             achievements: [
-                "Contributed to the Django-driven enterprise backup platform, ensuring 100% production integrity.",
-                "Documented over 250 API endpoints to streamline developer onboarding and integration."
+                "Developed and optimized RESTful APIs for the Zmanda Management Console using Django, ensuring 100% production stability.",
+                "Authored comprehensive Swagger/OpenAPI documentation for 250+ endpoints, reducing developer onboarding time by 40%.",
+                "Identified and resolved critical backend performance bottlenecks, improving system throughput for backup operations."
             ],
-            techStack: ["Django", "Python", "REST APIs"]
+            techStack: ["Python", "Django", "REST APIs", "Linux", "Postman"]
         }
     ],
     education: [
