@@ -9,7 +9,7 @@ const About = () => {
                     <p>
                         I am a Software Engineer and Master's student in Computer Science at the University of Southern California (USC),
                         specializing in Artificial Intelligence and Machine Learning. With a strong foundation in Full-Stack Development
-                        and scalable System Design, I bridge the gap between complex algorithms and user-centric applications.
+                        I build scalable, AI-driven systems that solve complex real-world problems.
                     </p>
                     <p>
                         Previously at Mercedes-Benz R&D, I led initiatives integrating Generative AI into enterprise workflows,

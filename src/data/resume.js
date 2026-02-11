@@ -2,15 +2,27 @@ export const resumeData = {
     profile: {
         name: "Adithya Sudhindra",
         role: "Software Engineer | AI/ML Specialist",
-        summary: "Software Engineer with expertise in Generative AI, Full-Stack Development, and Cloud-Native Distributed Systems. Proven track record of optimizing ML pipelines at Mercedes-Benz and building scalable architectures. Passionate about solving complex problems through AI innovation and robust engineering.",
-        email: "adithyasudhindra@gmail.com",
+        summary: "Software Engineer with expertise in Generative AI, Full-Stack Development, and Cloud-Native Distributed Systems. Proven track record of optimizing ML pipelines at Mercedes-Benz and building scalable architectures. Passionate about solving complex problems through AI innovation and robust engineering. Based in Los Angeles, CA.",
+        email: "asudhind@usc.edu",
         location: "Los Angeles, CA",
         socials: {
             github: "https://github.com/Adithya2441",
-            linkedin: "https://www.linkedin.com/in/adithya-sudhindra/", // Updated to specific placeholder as requested
+            linkedin: "https://www.linkedin.com/in/adithya-sudhindra/",
         }
     },
     experience: [
+        {
+            company: "Northern Lights (Presaige)",
+            role: "Machine Learning Engineer Intern",
+            period: "Jan 2025 – Present",
+            location: "Los Angeles, CA",
+            description: "Developing agentic AI models and scalable ML pipelines for large-scale datasets.",
+            achievements: [
+                "Building machine learning models using Google’s Unsplash dataset and metadata (**125GB+**), leveraging **AWS S3** for storage and **AWS SageMaker** for training.",
+                "Developing an **agentic AI model** using **Model Context Protocol (MCP)** and **AWS services** for a YouTube Shorts dataset to enable intelligent autonomous task execution."
+            ],
+            techStack: ["AWS S3", "AWS SageMaker", "Python", "MCP", "Agentic AI"]
+        },
         {
             company: "Mercedes-Benz Research and Development",
             role: "Software Developer Consultant",
@@ -60,28 +72,28 @@ export const resumeData = {
             institution: "University of Southern California",
             u: "USC",
             degree: "Master of Science in Computer Science",
-            period: "2025 – 2026",
+            period: "Jan 2025 – Dec 2026",
             gpa: "3.74/4.0",
             courses: ["Analysis of Algorithms", "Machine Learning for Data Science", "Applied NLP", "Foundations of AI", "Operating Systems", "Distributed Systems", "Information Retrieval and Web Search Engines"]
         },
         {
             institution: "JSS Academy of Technical Education",
             degree: "Bachelor of Engineering in Computer Science",
-            period: "2019 – 2023",
+            period: "Aug 2019 – Jun 2023",
             gpa: "9.24/10.0"
         }
     ],
     projects: [
         {
             title: "Operating System Development",
-            description: "A functional OS kernel written from scratch.",
+            description: "A functional OS kernel written from scratch. (Private repository as per course requirements)",
             caseStudy: {
                 problem: "Understanding the low-level complexities of memory management and process scheduling in modern operating systems.",
                 solution: "Built a 32-bit kernel from scratch supporting multi-tasking, paging, and interruptions.",
                 impact: "Successfully booted on bare metal x86 hardware and handled basic shell commands."
             },
             techStack: ["C", "x86 Assembly", "QEMU", "Grub"],
-            link: "https://github.com/Adithya2441" // Placeholder if specific repo not found
+            link: "https://github.com/Adithya2441/Weenix_Operating_System"
         },
         {
             title: "AI-Based Image Generation Platform",
@@ -92,7 +104,7 @@ export const resumeData = {
                 impact: "Enabled users to generate artwork in <10s with custom style transfer capabilities."
             },
             techStack: ["Python", "PyTorch", "Stable Diffusion", "React", "FastAPI"],
-            link: "https://github.com/Adithya2441"
+            link: "https://github.com/Adithya2441/text-to-image"
         },
         {
             title: "Restaurant Reservation System",
@@ -103,7 +115,7 @@ export const resumeData = {
                 impact: "Simulated load testing showed capability to handle 500+ concurrent bookings without latency."
             },
             techStack: ["Django", "React", "PostgreSQL", "Docker", "Redis"],
-            link: "https://github.com/Adithya2441"
+            link: "https://github.com/Adithya2441/Restaurant-Reservation-System"
         },
         {
             title: "Waste Image Classification",
@@ -114,13 +126,24 @@ export const resumeData = {
                 impact: "Achieved 92% classification accuracy on the test set, suitable for deployment in smart bins."
             },
             techStack: ["Python", "TensorFlow", "Keras", "OpenCV"],
-            link: "https://github.com/Adithya2441"
+            link: "https://github.com/Adithya2441/Multiclass-image-classification"
+        },
+        {
+            title: "Portfolio Website",
+            description: "Personal portfolio website built with React and Vite.",
+            caseStudy: {
+                problem: "Need a centralized platform to showcase software engineering skills, projects, and experience.",
+                solution: "Designed and developed a responsive, modern portfolio using React, Vite, and custom CSS.",
+                impact: "Provides a professional online presence and easy access to resume and project repositories."
+            },
+            techStack: ["React", "Vite", "CSS", "GitHub Actions"],
+            link: "https://github.com/Adithya2441/Portfolio"
         }
     ],
     skills: {
-        languages: ["Python", "Java", "C++", "JavaScript/TypeScript", "SQL", "HTML/CSS"],
-        frameworks: ["React", "Django", "Spring Boot", "Node.js", "PyTorch", "TensorFlow", "Next.js"],
-        tools: ["Docker", "Kubernetes", "AWS", "Git/GitHub", "PostgreSQL", "MongoDB", "Jenkins"],
-        concepts: ["Generative AI", "RAG", "Microservices", "Distributed Systems", "Computer Vision", "CI/CD"]
+        languages: ["Python", "Java", "C/C++", "JavaScript/TypeScript", "SQL", "x86 Assembly", "HTML/CSS"],
+        frameworks: ["React", "Django", "Spring Boot", "Node.js", "PyTorch", "TensorFlow", "FastAPI", "Next.js"],
+        tools: ["AWS (SageMaker, S3)", "Docker", "Kubernetes", "Git/GitHub", "GitHub Actions", "PostgreSQL", "MongoDB", "Jenkins", "QEMU"],
+        concepts: ["Generative AI", "Agentic AI", "RAG", "Model Context Protocol (MCP)", "Microservices", "Distributed Systems", "Computer Vision", "CI/CD"]
     }
 };
