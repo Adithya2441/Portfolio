@@ -86,40 +86,24 @@ export const resumeData = {
     projects: [
         {
             title: "RaftScope — Distributed Consensus Engine",
-            description: "A from-scratch implementation of the Raft consensus algorithm in C++20, built to explore fault-tolerant distributed systems at the protocol level. Features gRPC node communication, Lamport clock event logging, a real-time D3.js visualizer, a strongly consistent KV store, and CV-based replication threading optimization (~30,000 ops/sec).",
+            description: "From-scratch implementation of the Raft consensus algorithm in C++20 featuring real-time cluster visualization and high-throughput replication.",
             caseStudy: {
-                problem: "Understanding and debugging consensus system edge cases (leader election split votes, unaligned log replication, non-deterministic race conditions) in distributed environments.",
-                solution: "Implemented full Raft state machine in C++20 over gRPC, added Lamport clock logical timestamping for causal ordering, built a real-time D3.js visualizer, and optimized replication via condition-variable synchronization.",
-                impact: "Boosted replication throughput from polling bottleneck to ~30,000 ops/sec (ranking 13th out of 47 in benchmarking) with an estimated 98/100 KV-store linearizability score."
+                problem: "Consensus protocols are complex to debug due to non-deterministic message ordering and split-vote edge cases across cluster nodes.",
+                solution: "Built a C++20/gRPC Raft state machine with Lamport clock event logging, a D3.js visualizer, and condition-variable thread synchronization.",
+                impact: "Eliminated replication polling bottlenecks to reach ~30,000 ops/sec throughput (ranked 13/47) with a 98/100 KV-store consistency score."
             },
-            highlights: [
-                "Full Raft implementation (leader election, log replication, safety guarantees) in C++20",
-                "gRPC-based inter-node RPC layer",
-                "Lamport clock event logging for causal traceability",
-                "D3.js real-time cluster visualizer",
-                "KV store built on the consensus layer",
-                "CV-based replication threading optimization: ~30,000 ops/sec, ranked 13/47"
-            ],
-            techStack: ["C++20", "gRPC", "D3.js", "Distributed Systems", "Multi-threading"],
+            techStack: ["C++20", "gRPC", "D3.js", "Distributed Systems"],
             link: "https://github.com/Adithya2441/RAFT"
         },
         {
             title: "Surgical AI — Surgical Skill & Gesture Recognition",
-            description: "A 7-stage research project replicating and extending SAIS (Nature Biomed Eng, 2023) and ZEN (arXiv, 2026) on JIGSAWS and Cholec80 surgical video datasets to recognize gestures, subphases, and skill levels directly from video.",
+            description: "Surgical video AI research replicating and extending SAIS and ZEN architectures to recognize gestures, subphases, and surgeon skill level.",
             caseStudy: {
-                problem: "Surgical video analysis models often memorize surgeon-specific idiosyncrasies rather than generalizing gesture and skill recognition across unseen operators.",
-                solution: "Engineered a two-stream DINO-ViT temporal architecture with prototype contrastive learning, evaluated via Leave-One-User-Out (LOUO) cross-validation, and developed a multi-teacher distillation setup (DINO-ViT-Base + BiomedCLIP).",
-                impact: "Achieved needle-driving subphase mean PPV of 0.987 (vs ~0.875 paper benchmark) and uncovered that gesture-trained representations implicitly encode surgical skill (AUC up to 1.0)."
+                problem: "Surgical video models often overfit to specific surgeon habits rather than generalizing gesture and skill recognition across operators.",
+                solution: "Engineered a two-stream DINO-ViT temporal architecture evaluated with Leave-One-User-Out CV and multi-teacher knowledge distillation.",
+                impact: "Achieved 0.987 needle subphase mean PPV and discovered gesture-trained representations implicitly encode surgeon skill (AUC up to 1.0)."
             },
-            highlights: [
-                "7-stage progression: ResNet50 baseline → two-stream DINO-ViT temporal architecture",
-                "Prototype contrastive learning for gesture/skill embedding structure",
-                "Leave-One-User-Out cross-validation (generalization across surgeons)",
-                "Needle subphase mean PPV: 0.987 (vs. ~0.875 in original paper)",
-                "Novel finding: gesture-trained models implicitly encode surgical skill (AUC up to 1.0)",
-                "Ongoing extension: multi-teacher distillation (DINO-ViT-Base + BiomedCLIP) toward a surgical foundation model"
-            ],
-            techStack: ["PyTorch", "DINO-ViT", "ResNet50", "BiomedCLIP", "Contrastive Learning", "Computer Vision"],
+            techStack: ["PyTorch", "DINO-ViT", "ResNet50", "BiomedCLIP", "Computer Vision"],
             link: "https://github.com/Adithya2441/surgical-ai"
         },
         {

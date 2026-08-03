@@ -26,17 +26,6 @@ const Projects = () => {
             <div className="card-body">
               <p className="description">{project.description}</p>
 
-              {project.highlights && project.highlights.length > 0 && (
-                <div className="highlights-box">
-                  <div className="highlights-title">Highlights:</div>
-                  <ul className="highlights-list">
-                    {project.highlights.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
               {project.caseStudy && (
                 <div className="case-study">
                   <div className="study-item">
@@ -130,39 +119,6 @@ const Projects = () => {
           color: var(--text-secondary);
           margin-bottom: 1.5rem;
           font-size: 1rem;
-        }
-
-        .highlights-box {
-          background: rgba(0, 0, 0, 0.2);
-          padding: 1rem;
-          border-radius: 8px;
-          margin-bottom: 1.25rem;
-          border-left: 3px solid var(--accent);
-        }
-
-        .highlights-title {
-          color: var(--text-primary);
-          font-weight: 600;
-          text-transform: uppercase;
-          font-size: 0.75rem;
-          letter-spacing: 0.05em;
-          margin-bottom: 0.5rem;
-        }
-
-        .highlights-list {
-          margin: 0;
-          padding-left: 1.2rem;
-          color: var(--text-secondary);
-          font-size: 0.875rem;
-        }
-
-        .highlights-list li {
-          margin-bottom: 0.35rem;
-          line-height: 1.45;
-        }
-
-        .highlights-list li:last-child {
-          margin-bottom: 0;
         }
 
         .case-study {
