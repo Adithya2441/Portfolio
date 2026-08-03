@@ -73,8 +73,8 @@ export const resumeData = {
             u: "USC",
             degree: "Master of Science in Computer Science",
             period: "Jan 2025 – Dec 2026",
-            gpa: "3.74/4.0",
-            courses: ["Analysis of Algorithms", "Machine Learning for Data Science", "Applied NLP", "Foundations of AI", "Operating Systems", "Distributed Systems", "Information Retrieval and Web Search Engines"]
+            gpa: "3.77/4.0",
+            courses: ["Analysis of Algorithms", "Machine Learning for Data Science", "Applied NLP", "Foundations of AI", "Operating Systems", "Distributed Systems", "Information Retrieval and Web Search Engines", "Agentic AI"]
         },
         {
             institution: "JSS Academy of Technical Education",
