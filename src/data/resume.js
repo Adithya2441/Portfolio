@@ -16,12 +16,16 @@ export const resumeData = {
             role: "Machine Learning Engineer Intern",
             period: "Jan 2025 – Present",
             location: "Los Angeles, CA",
-            description: "Developing agentic AI models and scalable ML pipelines for large-scale datasets.",
+            description: "Developing agentic AI systems and scalable ML pipelines for large-scale social media and image datasets.",
             achievements: [
-                "Building machine learning models using Google’s Unsplash dataset and metadata (**125GB+**), leveraging **AWS S3** for storage and **AWS SageMaker** for training.",
-                "Developing an **agentic AI model** using **Model Context Protocol (MCP)** and **AWS services** for a YouTube Shorts dataset to enable intelligent autonomous task execution."
+                "Building an **agentic AI framework** using **Model Context Protocol (MCP)** and **AWS services** for autonomous, general-purpose task execution — applied across multiple use cases including YouTube Shorts data workflows.",
+                "Trained and validated image/video popularity-prediction models on Google's Unsplash dataset (**125GB+**, **6.15M images**) using **ResNet embeddings** and **AWS SageMaker**, processed and stored via **AWS S3**.",
+                "Built a large-scale statistical validation pipeline (**FAISS + ResNet/X-CLIP embeddings**) to test model score reliability against real engagement, producing **250K+ pairwise comparisons** across a **1.25M-image** and **2M+ Reels** dataset.",
+                "Extended popularity-prediction infrastructure to TikTok — built a multi-stage data pipeline collecting content via **Apify's TikTok scraper**, and currently developing a TikTok popularity-prediction model on top of the collected dataset.",
+                "Shipped a production generative AI feature (**Google Gemini**) that auto-generates optimized video thumbnails, integrated end-to-end into the platform via **Django** and **Celery**.",
+                "Deployed and optimized **AWS SageMaker** inference infrastructure (real-time, async, and serverless endpoints), including autoscaling fixes that reduced unnecessary GPU spend."
             ],
-            techStack: ["AWS S3", "AWS SageMaker", "Python", "MCP", "Agentic AI"]
+            techStack: ["AWS S3", "AWS SageMaker", "Python", "MCP", "FAISS", "Gemini API", "Django", "Celery", "Apify"]
         },
         {
             company: "Mercedes-Benz Research and Development",
@@ -175,8 +179,8 @@ export const resumeData = {
     ],
     skills: {
         languages: ["Python", "Java", "C/C++", "JavaScript/TypeScript", "SQL", "x86 Assembly", "HTML/CSS"],
-        frameworks: ["React", "PyTorch", "TensorFlow", "Django", "Spring Boot", "Node.js", "FastAPI", "Next.js", "gRPC", "D3.js"],
-        tools: ["AWS (SageMaker, S3)", "Docker", "Kubernetes", "Git/GitHub", "GitHub Actions", "PostgreSQL", "MongoDB", "Jenkins", "QEMU"],
-        concepts: ["Generative AI", "Agentic AI", "Distributed Systems (Raft)", "Computer Vision & Surgical AI", "Contrastive Learning", "RAG", "Model Context Protocol (MCP)", "Microservices", "CI/CD"]
+        frameworks: ["PyTorch", "TensorFlow", "Django", "Celery", "React", "Spring Boot", "FastAPI", "Node.js", "Next.js", "gRPC", "D3.js"],
+        tools: ["AWS (SageMaker, S3)", "FAISS", "Gemini API", "Apify", "Docker", "Kubernetes", "Git/GitHub", "GitHub Actions", "PostgreSQL", "MongoDB", "Jenkins", "QEMU"],
+        concepts: ["Generative AI", "Agentic AI", "Model Context Protocol (MCP)", "Distributed Systems (Raft)", "Computer Vision & Surgical AI", "Popularity Prediction", "Contrastive Learning", "RAG", "Microservices", "CI/CD"]
     }
 };
