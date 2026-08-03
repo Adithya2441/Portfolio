@@ -85,6 +85,44 @@ export const resumeData = {
     ],
     projects: [
         {
+            title: "RaftScope — Distributed Consensus Engine",
+            description: "A from-scratch implementation of the Raft consensus algorithm in C++20, built to explore fault-tolerant distributed systems at the protocol level. Features gRPC node communication, Lamport clock event logging, a real-time D3.js visualizer, a strongly consistent KV store, and CV-based replication threading optimization (~30,000 ops/sec).",
+            caseStudy: {
+                problem: "Understanding and debugging consensus system edge cases (leader election split votes, unaligned log replication, non-deterministic race conditions) in distributed environments.",
+                solution: "Implemented full Raft state machine in C++20 over gRPC, added Lamport clock logical timestamping for causal ordering, built a real-time D3.js visualizer, and optimized replication via condition-variable synchronization.",
+                impact: "Boosted replication throughput from polling bottleneck to ~30,000 ops/sec (ranking 13th out of 47 in benchmarking) with an estimated 98/100 KV-store linearizability score."
+            },
+            highlights: [
+                "Full Raft implementation (leader election, log replication, safety guarantees) in C++20",
+                "gRPC-based inter-node RPC layer",
+                "Lamport clock event logging for causal traceability",
+                "D3.js real-time cluster visualizer",
+                "KV store built on the consensus layer",
+                "CV-based replication threading optimization: ~30,000 ops/sec, ranked 13/47"
+            ],
+            techStack: ["C++20", "gRPC", "D3.js", "Distributed Systems", "Multi-threading"],
+            link: "https://github.com/Adithya2441/RAFT"
+        },
+        {
+            title: "Surgical AI — Surgical Skill & Gesture Recognition",
+            description: "A 7-stage research project replicating and extending SAIS (Nature Biomed Eng, 2023) and ZEN (arXiv, 2026) on JIGSAWS and Cholec80 surgical video datasets to recognize gestures, subphases, and skill levels directly from video.",
+            caseStudy: {
+                problem: "Surgical video analysis models often memorize surgeon-specific idiosyncrasies rather than generalizing gesture and skill recognition across unseen operators.",
+                solution: "Engineered a two-stream DINO-ViT temporal architecture with prototype contrastive learning, evaluated via Leave-One-User-Out (LOUO) cross-validation, and developed a multi-teacher distillation setup (DINO-ViT-Base + BiomedCLIP).",
+                impact: "Achieved needle-driving subphase mean PPV of 0.987 (vs ~0.875 paper benchmark) and uncovered that gesture-trained representations implicitly encode surgical skill (AUC up to 1.0)."
+            },
+            highlights: [
+                "7-stage progression: ResNet50 baseline → two-stream DINO-ViT temporal architecture",
+                "Prototype contrastive learning for gesture/skill embedding structure",
+                "Leave-One-User-Out cross-validation (generalization across surgeons)",
+                "Needle subphase mean PPV: 0.987 (vs. ~0.875 in original paper)",
+                "Novel finding: gesture-trained models implicitly encode surgical skill (AUC up to 1.0)",
+                "Ongoing extension: multi-teacher distillation (DINO-ViT-Base + BiomedCLIP) toward a surgical foundation model"
+            ],
+            techStack: ["PyTorch", "DINO-ViT", "ResNet50", "BiomedCLIP", "Contrastive Learning", "Computer Vision"],
+            link: "https://github.com/Adithya2441/surgical-ai"
+        },
+        {
             title: "Operating System Development",
             description: "A functional OS kernel written from scratch. (Private repository as per course requirements)",
             caseStudy: {
@@ -142,8 +180,8 @@ export const resumeData = {
     ],
     skills: {
         languages: ["Python", "Java", "C/C++", "JavaScript/TypeScript", "SQL", "x86 Assembly", "HTML/CSS"],
-        frameworks: ["React", "Django", "Spring Boot", "Node.js", "PyTorch", "TensorFlow", "FastAPI", "Next.js"],
+        frameworks: ["React", "PyTorch", "TensorFlow", "Django", "Spring Boot", "Node.js", "FastAPI", "Next.js", "gRPC", "D3.js"],
         tools: ["AWS (SageMaker, S3)", "Docker", "Kubernetes", "Git/GitHub", "GitHub Actions", "PostgreSQL", "MongoDB", "Jenkins", "QEMU"],
-        concepts: ["Generative AI", "Agentic AI", "RAG", "Model Context Protocol (MCP)", "Microservices", "Distributed Systems", "Computer Vision", "CI/CD"]
+        concepts: ["Generative AI", "Agentic AI", "Distributed Systems (Raft)", "Computer Vision & Surgical AI", "Contrastive Learning", "RAG", "Model Context Protocol (MCP)", "Microservices", "CI/CD"]
     }
 };

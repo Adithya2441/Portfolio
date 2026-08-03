@@ -1,6 +1,6 @@
 import { ArrowRight, Download, Mail } from 'lucide-react';
 import { resumeData } from '../data/resume';
-
+import profilePic from '../assets/profile.jpg';
 
 const HeroSection = () => {
   return (
@@ -16,10 +16,18 @@ const HeroSection = () => {
             <a href="#projects" className="btn btn-primary">
               View Projects <ArrowRight size={18} />
             </a>
-            <a href="/Portfolio/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" aria-label="Download Resume PDF">
+            <a href="/Portfolio/Adithya_Sudhindra.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" aria-label="Download Resume PDF">
               Download Resume <Download size={18} />
             </a>
           </div>
+        </div>
+
+        <div className="hero-image-container">
+          <img
+            src={profilePic}
+            alt={resumeData.profile.name}
+            className="profile-img"
+          />
         </div>
       </div>
 
@@ -34,13 +42,37 @@ const HeroSection = () => {
 
         .hero-container {
           display: flex;
-          justify-content: flex-start;
+          justify-content: space-between;
+          align-items: center;
           width: 100%;
+          gap: 4rem;
         }
 
         .hero-content {
-          max-width: 800px;
+          flex: 1;
+          max-width: 600px;
           animation: fadeIn 0.8s ease-out;
+        }
+
+        .hero-image-container {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          animation: fadeIn 1s ease-out;
+        }
+
+        .profile-img {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 4px solid var(--accent);
+          box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+          transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+          transform: scale(1.05);
         }
 
         .hero-greeting {
@@ -121,6 +153,29 @@ const HeroSection = () => {
           to { opacity: 1; transform: translateY(0); }
         }
 
+        @media (max-width: 968px) {
+          .hero-container {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: 2rem;
+          }
+
+          .hero-content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .hero-description {
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .hero-actions {
+            justify-content: center;
+          }
+        }
+
         @media (max-width: 768px) {
           .hero-actions {
             flex-direction: column;
@@ -129,6 +184,10 @@ const HeroSection = () => {
           .btn {
             width: 100%;
             justify-content: center;
+          }
+          .profile-img {
+            width: 200px;
+            height: 200px;
           }
         }
       `}</style>

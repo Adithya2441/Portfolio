@@ -27,7 +27,6 @@ async function checkLinks() {
   const srcDir = path.resolve(__dirname, '../src');
   const files = getFiles(srcDir).filter(f => f.endsWith('.js') || f.endsWith('.jsx'));
   
-  let linkCount = 0;
   let brokenCount = 0;
   const linksToCheck = new Set();
 
@@ -68,7 +67,7 @@ async function checkLinks() {
   console.log('---------------------------------------------------');
   console.log(`🏁 Validation Complete. Broken links: ${brokenCount}`);
   
-  if (brokenCount > 0) process.exit(1);
+  if (brokenCount > 0) globalThis.process.exit(1);
 }
 
 checkLinks();
