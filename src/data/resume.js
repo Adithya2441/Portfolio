@@ -2,7 +2,7 @@ export const resumeData = {
     profile: {
         name: "Adithya Sudhindra",
         role: "Software Engineer | AI/ML Specialist",
-        summary: "Software Engineer with expertise in Generative AI, Full-Stack Development, and Cloud-Native Distributed Systems. Proven track record of optimizing ML pipelines at Mercedes-Benz and building scalable architectures. Passionate about solving complex problems through AI innovation and robust engineering. Based in Los Angeles, CA.",
+        summary: "Machine Learning Engineer & MS CS student at USC (3.77 GPA) specializing in Agentic AI, Multimodal Deep Learning, and Cloud-Native Distributed Systems. Currently building autonomous MCP frameworks and large-scale popularity prediction pipelines at Presaige, with prior experience engineering GenAI (GPT-4o/Gemini) solutions and enterprise microservices at Mercedes-Benz R&D.",
         email: "asudhind@usc.edu",
         location: "Los Angeles, CA",
         socials: {

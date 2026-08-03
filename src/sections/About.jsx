@@ -7,18 +7,15 @@ const About = () => {
             <div className="about-content">
                 <div className="about-text">
                     <p>
-                        I am a Software Engineer and Master's student in Computer Science at the University of Southern California (USC),
-                        specializing in Artificial Intelligence and Machine Learning. With a strong foundation in Full-Stack Development
-                        I build scalable, AI-driven systems that solve complex real-world problems.
+                        I am a Machine Learning Engineer and Computer Science Master's student at the University of Southern California (USC, 3.77 GPA),
+                        specializing in Agentic AI, Multimodal Deep Learning, and Cloud-Native Systems. I build end-to-end AI architectures that pair cutting-edge model research with high-performance production engineering.
                     </p>
                     <p>
-                        Previously at Mercedes-Benz R&D, I led initiatives integrating Generative AI into enterprise workflows,
-                        showcasing my ability to deliver high-impact solutions. My expertise extends to Cloud-Native architectures,
-                        Microservices, and Distributed Systems.
+                        Currently at <strong>Presaige (Northern Lights)</strong>, I develop autonomous Agentic AI frameworks using the Model Context Protocol (MCP) and engineer large-scale popularity-prediction ML pipelines processing millions of image and video data points (Unsplash, YouTube Shorts, TikTok) using PyTorch, FAISS, AWS SageMaker, and Google Gemini.
+                        Previously at <strong>Mercedes-Benz R&D</strong>, I architected production RAG helpdesk systems powered by GPT-4o and engineered scalable microservice APIs serving thousands of users.
                     </p>
                     <p>
-                        I am passionate about building intelligent systems that solve real-world problems. Whether it's optimizing
-                        ML pipelines or architecting robust backend services, I thrive in challenging environments that push the boundaries of technology.
+                        Beyond industry engineering, my research interests span Surgical Computer Vision (two-stream DINO-ViT temporal models for gesture and skill recognition) and low-level system design (building Raft consensus engines in C++20 and OS kernels from scratch). I thrive on tackling complex, high-impact challenges across the entire AI/ML and software engineering spectrum.
                     </p>
                 </div>
             </div>
