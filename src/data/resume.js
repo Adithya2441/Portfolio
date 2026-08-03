@@ -96,17 +96,6 @@ export const resumeData = {
             link: "https://github.com/Adithya2441/surgical-ai"
         },
         {
-            title: "RaftScope — Distributed Consensus Engine",
-            description: "From-scratch implementation of the Raft consensus algorithm in C++20 featuring real-time cluster visualization and high-throughput replication.",
-            caseStudy: {
-                problem: "Consensus protocols are complex to debug due to non-deterministic message ordering and split-vote edge cases across cluster nodes.",
-                solution: "Built a C++20/gRPC Raft state machine with Lamport clock event logging, a D3.js visualizer, and condition-variable thread synchronization.",
-                impact: "Eliminated replication polling bottlenecks to reach ~30,000 ops/sec throughput (ranked 13/47) with a 98/100 KV-store consistency score."
-            },
-            techStack: ["C++20", "gRPC", "D3.js", "Distributed Systems"],
-            link: "https://github.com/Adithya2441/RAFT"
-        },
-        {
             title: "Operating System Development",
             description: "A functional OS kernel written from scratch. (Private repository as per course requirements)",
             caseStudy: {
@@ -127,6 +116,17 @@ export const resumeData = {
             },
             techStack: ["Python", "PyTorch", "Stable Diffusion", "React", "FastAPI"],
             link: "https://github.com/Adithya2441/text-to-image"
+        },
+        {
+            title: "RaftScope — Distributed Consensus Engine",
+            description: "From-scratch implementation of the Raft consensus algorithm in C++20 featuring real-time cluster visualization and high-throughput replication.",
+            caseStudy: {
+                problem: "Consensus protocols are complex to debug due to non-deterministic message ordering and split-vote edge cases across cluster nodes.",
+                solution: "Built a C++20/gRPC Raft state machine with Lamport clock event logging, a D3.js visualizer, and condition-variable thread synchronization.",
+                impact: "Eliminated replication polling bottlenecks to reach ~30,000 ops/sec throughput (ranked 13/47) with a 98/100 KV-store consistency score."
+            },
+            techStack: ["C++20", "gRPC", "D3.js", "Distributed Systems"],
+            link: "https://github.com/Adithya2441/RAFT"
         },
         {
             title: "Restaurant Reservation System",
