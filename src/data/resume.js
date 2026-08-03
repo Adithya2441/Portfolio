@@ -118,6 +118,17 @@ export const resumeData = {
             link: "https://github.com/Adithya2441/text-to-image"
         },
         {
+            title: "BiLSTM-CRF Named Entity Recognition",
+            description: "Deep learning models for Named Entity Recognition (NER), spanning BiLSTM baselines to GloVe embeddings, CNN character representations, and CRF sequence decoding.",
+            caseStudy: {
+                problem: "Sequential NLP tasks require joint modeling of word semantics, casing patterns, and label transition constraints for high tagging accuracy.",
+                solution: "Engineered custom PyTorch architectures combining BiLSTMs, GloVe embeddings, CNN character encoders, and CRF output layers.",
+                impact: "Achieved optimal sequence labeling F1-scores on the CoNLL-03 benchmark with multi-stage hyperparameter optimization."
+            },
+            techStack: ["PyTorch", "NLP", "BiLSTM", "GloVe", "CRF"],
+            link: "https://github.com/Adithya2441/NLP"
+        },
+        {
             title: "RaftScope — Distributed Consensus Engine",
             description: "From-scratch implementation of the Raft consensus algorithm in C++20 featuring real-time cluster visualization and high-throughput replication.",
             caseStudy: {
