@@ -1,6 +1,16 @@
 import Section from '../components/Section';
 import { resumeData } from '../data/resume';
 
+const categoryLabels = {
+    languages: 'Languages & Databases',
+    mlAi: 'ML / AI',
+    genAiAgents: 'GenAI & Agents',
+    mlInference: 'ML Inference & MLOps',
+    cloudBackend: 'Cloud & Backend',
+    databases: 'Databases',
+    devOps: 'DevOps & Testing'
+};
+
 const Skills = () => {
     return (
         <Section id="skills" title="Technical Skills">
@@ -8,7 +18,7 @@ const Skills = () => {
                 {Object.entries(resumeData.skills).map(([category, items]) => (
                     <div key={category} className="skill-category">
                         <h3 className="category-title">
-                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                            {categoryLabels[category] || category.charAt(0).toUpperCase() + category.slice(1)}
                         </h3>
                         <div className="skill-list">
                             {items.map((skill) => (
