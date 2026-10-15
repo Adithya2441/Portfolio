@@ -5,7 +5,7 @@ import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
-  const featuredLimit = 4;
+  const featuredLimit = 6;
   const displayedProjects = showAll ? resumeData.projects : resumeData.projects.slice(0, featuredLimit);
 
   return (
